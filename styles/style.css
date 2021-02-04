@@ -7,4 +7,134 @@
 .container {
     margin: 0 auto;
     max-width: 1100px;
+    margin-top: 50px;
+}
+
+.content-wrap {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid red;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+}
+
+.main-menu {
+    margin-top: 10px;
+    width: 100%;
+    list-style: none;
+}
+
+.main-menu-item {
+    margin-bottom: 25px;
+}
+
+
+.main-menu-icon {
+    display: inline-block;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main-menu-item:nth-child(1) .main-menu-icon{
+    background-image: url('../img/icons/food-icon.svg');
+}
+
+.main-menu-item:nth-child(2) .main-menu-icon {
+    background-image: url('../img/icons/blog-icon.svg');
+}
+
+.main-menu-item:nth-child(3) .main-menu-icon {
+    background-image: url('../img/icons/a-list-icon.svg');
+}
+
+.main-menu-item:nth-child(4) .main-menu-icon {
+    background-image: url('../img/icons/camera-icon.svg');
+}
+
+.main-menu-item:nth-child(5) .main-menu-icon {
+    background-image: url('../img/icons/about-icon.svg');
+}
+
+.main-menu-item a {
+    display: block;
+    display: flex;
+    align-items: center;
+
+    font-family: Arial;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+
+    color: #34ACA7;
+    text-decoration: none;
+}
+
+.main-menu-item a:hover {
+    text-decoration: underline;
+}
+
+.community-block {
+    width: 100%;
+}
+
+.community-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #000000;
+    border-bottom: 1px dashed #E5E5E5;
+}
+
+.community-description {
+    margin-bottom: 15px;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.community-button{
+    display: inline-block;
+    width: 100%;
+    padding: 10px 13px 10px 20px;
+    background: none;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    cursor: pointer;
+
+    font-family: Arial;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #34ACA7;
+
+    background-image: url('../img/icons/twitter-icon.svg');
+    background-repeat: no-repeat;
+    background-position: 5px 8px;
+}
+
+
+
+
+.main-content {
+    border: 2px solid yellow;
+    width: 900px;
 }
