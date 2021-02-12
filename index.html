@@ -3,29 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>Task 1</title>
 </head>
 <body>
     <div class="container">
-        <div class="content-wrap">
-            <aside class="aside">
-                <p><a href="index.html"><img src="img/icons/icon-logo.svg" alt="Main Logo" width="120" height="120"></a></p>
+        <div class="flex flex-space-between">
+            <aside class="aside flex  flex-center">
+                <p><a href="index.html"><img src="img/icons/icon-logo.svg" alt="Main Logo"></a></p>
                 <ul class="main-menu">
                     <li class="main-menu-item">
-                        <a href="#"><span class="main-menu-icon"></span>Tastemakers</a>
+                        <a class="link flex  flex-center" href="#">
+                            <span class="main-menu-icon icon icon-taste"></span>
+                            Tastemakers</a>
                     </li>
                     <li class="main-menu-item">
-                        <a href="#"><span class="main-menu-icon"></span>Blog</a>
+                        <a class="link flex  flex-center" href="#">
+                            <span class="main-menu-icon icon icon-blog"></span>
+                            Blog</a>
                     </li>
                     <li class="main-menu-item">
-                        <a href="#"><span class="main-menu-icon"></span>The A-List</a>
+                        <a class="link flex  flex-center" href="#">
+                            <span class="main-menu-icon icon icon-list"></span>
+                            The A-List</a>
                     </li>
                     <li class="main-menu-item">
-                        <a href="#"><span class="main-menu-icon"></span>Contribure</a>
+                        <a class="link flex  flex-center" href="#"><span class="main-menu-icon icon icon-contribute"></span>
+                            Contribure</a>
                     </li>
                     <li class="main-menu-item">
-                        <a href="#"><span class="main-menu-icon"></span>About</a>
+                        <a class="link flex  flex-center" href="#"><span class="main-menu-icon icon icon-about"></span>
+                            About</a>
                     </li>
                 </ul>
                 <div class="community-block">
@@ -44,18 +53,34 @@
             <main class="main-content">
                 <div class="tabs">
                     <div class="tabs-body">
-                        <img src="img/baner.jpg" alt="Main-banner" width="896" height="445">
+                        <p class="tabs-title">Share your Foor Sence</p>
+                        <p class="tabs-subtitle">Submit yout favorite recipes, become a contributor, or get interviewed.</p>                        
                     </div>
-                    <div class="tabs-buttons">
-                        <button type="button" class="tabs-button">Tastemakers</button>
-                        <button type="button" class="tabs-button">Blog</button>
-                        <button type="button" class="tabs-button">The A-List</button>
-                        <button type="button" class="tabs-button tabs-button-current">Contribute</button>
+                    <div class="flex flex-space-between">
+                        <div class="tabs-button">
+                            <p class="tabs-button-title">Tastemakers</p>
+                            <p class="tabs-button-subtitle">Feast your eyes & get reciepes!</p>
+                        </div>
+
+                        <div class="tabs-button">
+                            <p class="tabs-button-title">Blog</p>
+                            <p class="tabs-button-subtitle">News, how-tos, stories, and more</p>
+                        </div>
+
+                        <div class="tabs-button">
+                            <p class="tabs-button-title">The A-List</p>
+                            <p class="tabs-button-subtitle">Handpicked, absolute favorites</p>
+                        </div>
+
+                        <div class="tabs-button tabs-button-current">
+                            <p class="tabs-button-title">Contribute</p>
+                            <p class="tabs-button-subtitle">We want to hear from you!</p>
+                        </div>
                     </div>
                 </div>
-                <div class="subscribe-block">
-                    <div class="subscribe-description-wrap">
-                        <p class="subscribe-description-icon"></p>
+                <div class="subscribe-block flex flex-space-between flex-center">
+                    <div class="flex flex-center">
+                        <p class="icon subscribe-description-icon"></p>
                         <p class="subscribe-description">
                             Sign up for out newsletter to receive a handpicked
                             selection of the best stories, recipes, and news, 
@@ -67,58 +92,74 @@
                         <button type="submit" class="subscribe-button">Subscribe</button>
                     </form>
                 </div>
-                <div class="cards">
+                <div class="cards flex flex-space-between">
                     <div class="card">
-                        <p class="card-image">
-                            <img src="img/card1.jpg" alt="Card 1" width="207" height="143">
-                        </p>
-                        <p class="card-title">2012’s Best Summer Cookbooks</p>
+                        <a href="#">
+                            <p class="card-image">
+                                <img src="img/card1.jpg" alt="Card 1">
+                            </p>
+                        </a>
+                        <a href="#" class="link">
+                            <p class="card-title">2012’s Best Summer Cookbooks</p>
+                        </a>
                         <p class="card-body">
                             With the best of the season coming 
                             from “orchards, farms and gardens,” 
                             NPR has put together an impressive 
                             collection of 10 summer cookbooks.
                         </p>
-                        <p class="card-info">
-                            <span class="card-date">May 23, 2012 /</span>
-                            <a class="card-more" href="#">Read...</a>
-                        </p>
+                        <div class="card-info">
+                            <span class="card-date">May 23, 2012</span>
+                            <a class="link card-more" href="#">Read</a>
+                        </div>
                     </div>
                     <div class="card">
-                        <p class="card-image">
-                            <img src="img/card2.jpg" alt="Card 2" width="207" height="143">
-                        </p>
-                        <p class="card-title">How to Make Vegetable Chips</p>
+                        <a href="#">
+                            <p class="card-image">
+                                <img src="img/card2.jpg" alt="Card 2">
+                            </p>
+                        </a>
+                        <a href="#" class="link">
+                            <p class="card-title">How to Make Vegetable Chips</p>
+                        </a>
                         <p class="card-body">
                             About a month ago, I ate almost an 
                             entire box of kale chips. My brother 
                             and I were visiting our cousin in Brooklyn, 
                             and before a very thoughtfully prepared vagan...
                         </p>
-                        <p class="card-info">
-                            <span class="card-date">May 17, 2012 /</span>
-                            <a class="card-more" href="#">Read...</a>
-                        </p>
+                        <div class="card-info">
+                            <span class="card-date">May 17, 2012</span>
+                            <a class="link card-more" href="#">Read</a>
+                        </div>
                     </div>
                     <div class="card">
-                        <p class="card-image">
-                            <img src="img/card3.jpg" alt="Card 3" width="207" height="143">
-                        </p>
-                        <p class="card-title">Join us on Pinterest!</p>
+                        <a href="#">
+                            <p class="card-image">
+                                <img src="img/card3.jpg" alt="Card 3">
+                            </p>
+                        </a>
+                        <a href="#" class="link">
+                            <p class="card-title">Join us on Pinterest!</p>
+                        </a>
                         <p class="card-body">
                             If I could curate a cookbook for you, 
                             this would be it.
                         </p>
-                        <p class="card-info">
-                            <span class="card-date">May 23, 2012 /</span>
-                            <a class="card-more" href="#">Read...</a>
-                        </p>
+                        <div class="card-info">
+                            <span class="card-date">May 23, 2012</span>
+                            <a class="link card-more" href="#">Read</a>
+                        </div>
                     </div>
                     <div class="card">
-                        <p class="card-image">
-                            <img src="img/card4.jpg" alt="Card 4" width="207" height="143">
-                        </p>
-                        <p class="card-title">Recipes from a Sunday Supper</p>
+                        <a href="#">
+                            <p class="card-image">
+                                <img src="img/card4.jpg" alt="Card 4">
+                            </p>
+                        </a>
+                        <a href="#" class="link">
+                            <p class="card-title">Recipes from a Sunday Supper</p>
+                        </a>
                         <p class="card-body">
                             I could not figure out what to do with
                              the delectable slices of Pear Cake that
@@ -126,33 +167,33 @@
                               Sunday supper - eat them slowly, 
                               a little bit at...
                         </p>
-                        <p class="card-info">
-                            <span class="card-date">May 17, 2012 /</span>
-                            <a class="card-more" href="#">Read...</a>
-                        </p>
+                        <div class="card-info">
+                            <span class="card-date">May 17, 2012</span>
+                            <a class="link card-more" href="#">Read</a>
+                        </div>
                     </div>
                 </div>
             </main>
         </div>
-        <footer class="main-footer">
+        <footer class="main-footer flex flex-space-between">
             <div class="copyright-block">
                 <p>
-                    <a class="copyright-link" href="#">Privacy Policy</a>
-                    <a class="copyright-link" href="#">Terms of Use</a>
-                    <a class="copyright-link" href="#">Contact</a>
+                    <a class="link copyright-link" href="#">Privacy Policy</a>
+                    <a class="link copyright-link" href="#">Terms of Use</a>
+                    <a class="link copyright-link" href="#">Contact</a>
                 </p>
                 <p class="copyright">
-                    © 2016 Food Sense, all rights reserved.
+                    &copy; 2016 Food Sense, all rights reserved.
                 </p>
             </div>
-            <ul class="social-block">
-                <li class="social-block-item">
+            <ul class="social-block flex">
+                <li class="icon icon-tw">
                     <a class="social-block-link" href="#" aria-label="to-twitter"></a>
                 </li>
-                <li class="social-block-item">
+                <li class="icon icon-fb">
                     <a class="social-block-link" href="#" aria-label="to-facebook"></a>
                 </li>
-                <li class="social-block-item">
+                <li class="icon icon-rss">
                     <a class="social-block-link" href="#" aria-label="to-rss"></a>
                 </li>                
             </ul>

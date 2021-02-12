@@ -15,13 +15,14 @@
 }
 
 body {
-	font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: normal;
 	color: var(--dark-color);
 }
 
-
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -31,21 +32,47 @@ img {
     margin-top: 50px;
 }
 
-.content-wrap {
+.icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-position: center; 
+    cursor: pointer;   
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+}
+
+.flex {
     display: flex;
+}
+
+.flex-space-between {
     justify-content: space-between;
 }
 
-.aside {
-    display: flex;
-    flex-direction: column;
+.flex-center {
     align-items: center;
-    width: 140px;
+}
+
+/******************** HEADER ********************/
+
+.aside {
+    flex-direction: column;
+    max-width: 13%;
 }
 
 .main-menu {
-    margin-top: 10px;
     width: 100%;
+    margin-top: 10px;
+
     list-style: none;
 }
 
@@ -54,49 +81,34 @@ img {
 }
 
 .main-menu-icon {
-    display: inline-block;
     margin-right: 10px;
-    width: 35px;
-    height: 35px;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
-.main-menu-item:nth-child(1) .main-menu-icon{
+.icon-taste {
     background-image: url('../img/icons/food-icon.svg');
 }
 
-.main-menu-item:nth-child(2) .main-menu-icon {
+.icon-blog {
     background-image: url('../img/icons/blog-icon.svg');
 }
 
-.main-menu-item:nth-child(3) .main-menu-icon {
+.icon-list {
     background-image: url('../img/icons/a-list-icon.svg');
 }
 
-.main-menu-item:nth-child(4) .main-menu-icon {
+.icon-contribute {
     background-image: url('../img/icons/camera-icon.svg');
 }
 
-.main-menu-item:nth-child(5) .main-menu-icon {
+.icon-about {
     background-image: url('../img/icons/about-icon.svg');
 }
 
 .main-menu-item a {
-    display: block;
-    display: flex;
-    align-items: center;
-    font-family: Arial;
     font-style: italic;
-    font-weight: normal;
     font-size: 14px;
     line-height: 14px;
     color: var(--primary-color);
-    text-decoration: none;
-}
-
-.main-menu-item a:hover {
-    text-decoration: underline;
 }
 
 .community-block {
@@ -106,9 +118,7 @@ img {
 .community-title {
     margin-top: 10px;
     margin-bottom: 10px;
-    font-family: Verdana;
-    font-style: normal;
-    font-weight: normal;
+    font-family: 'Verdana', 'Arial', sans-serif;
     font-size: 12px;
     line-height: 12px;
     text-transform: uppercase;
@@ -117,9 +127,7 @@ img {
 
 .community-description {
     margin-bottom: 15px;
-    font-family: Arial;
     font-style: italic;
-    font-weight: normal;
     font-size: 10px;
     line-height: 19px;
 }
@@ -132,9 +140,7 @@ img {
     border: 1px solid var(--smokie-color);
     border-radius: 5px;
     cursor: pointer;
-    font-family: Arial;
     font-style: italic;
-    font-weight: normal;
     font-size: 10px;
     line-height: 12px;
     color: var(--primary-color);
@@ -143,102 +149,73 @@ img {
     background-position: 5px 8px;
 }
 
+/******************** MAIN CONTENT ********************/
+
 .main-content {
-    width: 896px;
+    max-width: 85%;
 }
 
 .tabs-body {
     position: relative;
-    background-color: blue;
-    max-height: 445px;
+    background-image: url('../img/baner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 445px; /*********************** ?? ***********************/
 }
 
-.tabs-body:before {
+.tabs-title{
     position: absolute;
     top: 65%;
-    content: 'Share your Foor Sence';
     width: 260px;
     background-color: var(--white-color);
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 15px;
-    font-family: Arial;
     font-style: italic;
-    font-weight: normal;
     font-size: 22px;
     line-height: 22px;
     letter-spacing: 0.01em;
 }
 
-.tabs-body:after {
+.tabs-subtitle {
     position: absolute;
     top: 76%;
     left: 0%;
-    content: 'Submit yout favorite recipes, become a contributor, or get interviewed.';
     width: 490px;
     background-color: var(--dark-color);
     padding-top: 17px;
     padding-bottom: 17px;
     padding-left: 15px;
-    font-family: Arial;
     font-style: italic;
-    font-weight: normal;
     font-size: 14px;
     line-height: 14px;
     letter-spacing: 0.01em;
     color: var(--white-color);
 }
 
-
-.tabs-buttons {
-    display: flex;
-    justify-content: space-between;
+.tabs-button {
+    flex-grow: 1;
+    
+    background: var(--light-color);
+    color: var(--primary-color);  
+    
+    
+    padding-top: 25px;
+    padding-bottom: 22px;
+    padding-left: 20px;
+    cursor: pointer;
 }
 
-.tabs-button {
-    display: inline-block;
-    border: none;
-    background: var(--light-color);
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
+.tabs-button-title {
     font-size: 18px;
     line-height: 18px;
-    color: var(--primary-color);  
-    min-width: 25%;
-    padding: 26px 101px 41px 20px; 
-    position: relative;
-    cursor: pointer;
-    text-align: left;
 }
 
-.tabs-button:after {
-    position: absolute;
-    height: 10px;
-    left: 20px;
-    top: 50px;
-    font-family: Arial;
+.tabs-button-subtitle {
     font-style: italic;
-    font-weight: normal;
     font-size: 10px;
     line-height: 19px;
-    color: var(--primary-color);
-}
-
-.tabs-button:nth-child(1):after {
-    content: 'Feast your eyes & get reciepes!';
-}
-
-.tabs-button:nth-child(2):after {
-    content: 'News, how-tos, stories, and more';
-}
-
-.tabs-button:nth-child(3):after {
-    content: 'Handpicked, absolute favorites';
-}
-
-.tabs-button:nth-child(4):after {
-    content: 'We want to hear from you!';
 }
 
 .tabs-button:hover {
@@ -250,36 +227,21 @@ img {
 }
 
 .subscribe-block {
-    margin: 30px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin: 30px 0 40px 0;
     border-top: 1px dashed var(--smokie-color);
     border-bottom: 1px dashed var(--smokie-color);
 }
 
-.subscribe-description-wrap {
-    display: flex;
+.subscribe-description-icon {
+    margin: 10px 16px 14px 18px;
+    background-image: url('../img/icons/mail-icon.svg');
 }
 
 .subscribe-description {
     max-width: 530px;
-}
-
-.subscribe-description-icon {
-    width: 32px;
-    height: 26px;
-    margin: 10px 16px 14px 18px;
-    background-image: url('../img/icons/mail-icon.svg');
-    background-repeat: no-repeat;
-}
-
-.subscribe-description {
     margin-top: 8px;
     margin-bottom: 10px;
-    font-family: Arial;
     font-style: italic;
-    font-weight: normal;
     font-size: 14px;
     line-height: 16px;
 }
@@ -292,9 +254,6 @@ img {
 }
 
 .input::placeholder {
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
     font-size: 10px;
     line-height: 10px;
 }
@@ -306,25 +265,23 @@ img {
     background: linear-gradient(180deg, #F4F3F3 0%, #BBB9B9 100%);
     border: 1px solid var(--smokie-color);
     border-radius: 2px;
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
+
     font-size: 10px;
     line-height: 10px;
     text-align: center;
 }
 
 .cards {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .card {
-    max-width: 23%;
+    flex: 1 1 calc((100% / 4) - 2rem);
 }
 
 .card-image {
+    width: 100%;
     filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
 }
 
@@ -332,9 +289,7 @@ img {
     max-width: 95%;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
+
     font-size: 16px;
     line-height: 21px;
     letter-spacing: -0.02em;
@@ -342,9 +297,6 @@ img {
 }
 
 .card-body {
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.02em;
@@ -355,53 +307,61 @@ img {
 }
 
 .card-date {
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
+    position: relative;
+
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.02em;
     color: var(--smokie-color);
 }
 
+.card-date:after {
+    position: absolute;
+    content: '/';
+    right: -7px;
+    /*top: 0;*/
+
+   /* border: 2px solid red;*/
+}
+
 .card-more {
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
+    padding: 5px;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.02em;
     color: var(--primary-color);
-    text-decoration: none;
+    position: relative;
 }
 
-.card-more:hover {
+.card-more:after {
+    position: absolute;
+    content: '...';
+}
+
+.card-more:hover:after {
     text-decoration: underline;
 }
 
+
+/******************** FOOTER ********************/
+
 .main-footer {
-    display: flex;
-    justify-content: space-between;
     border-top: 2px solid var(--smokie-color);
-    padding: 25px 10px 35px 10px;
+    padding: 35px 10px 35px 10px;
+    margin-top: 50px;
 }
 
-.copyright-link {
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
+.copyright-block {
     font-size: 12px;
-    line-height: 12px;
+    line-height: 12px;  
     letter-spacing: -0.02em;
+}
+
+.copyright-link {    
     color: var(--primary-color);
-    text-decoration: none;
     position: relative;
     display: inline-block;
     margin-right: 10px;
-}
-
-.copyright-link:hover {
-    text-decoration: underline;
 }
 
 .copyright-link:not(:last-child):after {
@@ -415,45 +375,25 @@ img {
 
 .copyright {
     margin-top: 5px;
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 12px;
-    letter-spacing: -0.02em;
     color: var(--smokie-color);
 }
 
 .social-block {
     list-style: none;
-    display: flex;
 }
 
-.social-block-item {
-    width: 32px;
-    height: 32px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.social-block-item:not(:last-child) {
+.social-block .icon:not(:last-child) {
     margin-right: 4px;
 }
 
-.social-block-item:nth-child(1) {
+.icon-tw {
     background-image: url('../img/icons/tw.svg');
 }
 
-.social-block-item:nth-child(2) {
+.icon-fb {
     background-image: url('../img/icons/fb-icon.svg');
 }
 
-.social-block-item:nth-child(3) {
+.icon-rss {
     background-image: url('../img/icons/rss-icon.svg');
-}
-
-.social-block-link {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
 }
