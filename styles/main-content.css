@@ -2,8 +2,7 @@
     max-width: 85%;
 }
 
-.tabs-body {
-    position: relative;
+.banner-wrap {
     background-image: url('../img/baner.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -11,14 +10,19 @@
     min-height: 445px; 
 }
 
-.tabs-title{
-    position: absolute;
-    top: 65%;
-    width: 260px;
+.main-title-wrap {
+    padding-top: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.tabs-title {
+    width: 25rem;
+    margin: 0;    
+    padding: 14px;
     background-color: var(--white-color);
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
     font-style: italic;
     font-size: 22px;
     line-height: 22px;
@@ -26,14 +30,9 @@
 }
 
 .tabs-subtitle {
-    position: absolute;
-    top: 76%;
-    left: 0%;
-    width: 490px;
+    width: 35rem;
+    padding: 15px;
     background-color: var(--dark-color);
-    padding-top: 17px;
-    padding-bottom: 17px;
-    padding-left: 15px;
     font-style: italic;
     font-size: 14px;
     line-height: 14px;
@@ -45,8 +44,7 @@
     flex-grow: 1;
     
     background: var(--light-color);
-    color: var(--primary-color);  
-    
+    color: var(--primary-color);    
     
     padding-top: 25px;
     padding-bottom: 22px;
@@ -141,6 +139,9 @@
     font-size: 16px;
     line-height: 21px;
     letter-spacing: -0.02em;
+}
+
+.card-title .link {
     color: var(--primary-color);
 }
 
@@ -169,7 +170,7 @@
     right: -7px;
 }
 
-.card-more {
+.link-more {
     padding: 5px;
     font-size: 14px;
     line-height: 20px;
@@ -178,12 +179,12 @@
     position: relative;
 }
 
-.card-more:after {
+.link-more:after {
     position: absolute;
     content: '...';
 }
 
-.card-more:hover:after {
+.link-more:hover:after {
     text-decoration: underline;
 }
 
@@ -258,8 +259,13 @@
 }
 
 @media screen and (max-width: 480px) {
-    .subscribe-description {
-        max-width: 50%;
+    .mail {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .form {
+        margin-bottom: 10px;
     }
 
     .card {
@@ -274,7 +280,21 @@
         font-size: 18px;
     }
 
-    .card-date, .card-more {
+    .card-date, .link-more {
         font-size: 16px;
     }
+
+    .main-menu-icon, .list-control  {
+        display: none;
+    }
+
+    .banner-wrap {
+        margin: 0 -5%;
+    }
+
+    .main-title-wrap {
+        padding: 0;
+        justify-content: flex-end;
+    }
+
 }
