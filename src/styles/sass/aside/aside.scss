@@ -1,0 +1,125 @@
+.aside {
+    flex-direction: column;
+    width: 140px;
+
+    .main-menu {
+        width: 100%;
+        margin-top: 10px;    
+        list-style: none;
+
+        .item {
+            margin-bottom: 25px;
+
+            a {
+                font-style: italic;
+                font-size: 14px;
+                line-height: 14px;
+                color: var(--primary-color);
+            }
+        }
+
+    }
+}
+
+.main-menu-icon {
+    margin-right: 10px;
+}
+
+$icons: 'taste', 'blog', 'list', 'contribute', 'about';
+
+@mixin mixin-name($name) {
+    .icon-#{$name} {
+        background-image: url('/src/img/icons/icon-#{$name}.svg'); 
+    }
+}
+
+@for $i from 1 through length($icons) {
+    .icon {
+        @include mixin-name(nth($icons, $i));
+    }
+}
+
+
+.community-block {
+    width: 100%;
+
+    .title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: 'Verdana', 'Arial', sans-serif;
+        font-size: 12px;
+        line-height: 12px;
+        text-transform: uppercase;
+        border-bottom: 1px dashed var(--smokie-color);
+    }
+
+    .description {
+        margin-bottom: 15px;
+        font-style: italic;
+        font-size: 10px;
+        line-height: 19px;
+    }
+
+    .button{
+        display: inline-block;
+        width: 100%;
+        padding: 10px 13px 10px 20px;
+        background: none;
+        border: 1px solid var(--smokie-color);
+        border-radius: 5px;
+        cursor: pointer;
+        font-style: italic;
+        font-size: 10px;
+        line-height: 12px;
+        color: var(--primary-color);
+        background-image: url('../../../src/img/icons/twitter-icon.svg');
+        background-repeat: no-repeat;
+        background-position: 5px 8px;
+    }
+}
+
+
+
+@media screen and (max-width: 993px) {
+    .aside {
+        width: 100%;
+        flex-direction: row;
+        margin-bottom: 30px;
+
+        .main-menu {
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+    
+            .item {
+                flex-grow: 1;
+        
+                a {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .main-menu-icon {
+        margin: 0;
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .community-block {
+        display: none;
+    }    
+}
+
+@media screen and (max-width: 480px) {
+    .aside {
+        flex-direction: column;  
+        
+        .main-menu {
+            order: -1;
+        }
+    }
+}

@@ -3,7 +3,7 @@
 }
 
 .banner-wrap {
-    background-image: url('../img/baner.jpg');
+    background-image: url('@/src/img/baner.jpg'); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -80,7 +80,7 @@
 
 .subscribe-description-icon {
     margin: 10px 16px 14px 18px;
-    background-image: url('../img/icons/mail-icon.svg');
+    background-image: url('../src/img/icons/mail-icon.svg');
 }
 
 .subscribe-description {
