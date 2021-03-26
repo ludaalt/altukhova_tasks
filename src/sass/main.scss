@@ -3,7 +3,7 @@
 }
 
 .banner-wrap {
-    background-image: url('@/src/img/baner.jpg'); 
+    background-image: url('../../img/baner.jpg'); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -50,25 +50,25 @@
     padding-bottom: 22px;
     padding-left: 20px;
     cursor: pointer;
-}
 
-.tabs-button-title {
-    font-size: 18px;
-    line-height: 18px;
-}
+    &-title {
+        font-size: 18px;
+        line-height: 18px;
+    }
 
-.tabs-button-subtitle {
-    font-style: italic;
-    font-size: 10px;
-    line-height: 19px;
-}
+    &-subtitle {
+        font-style: italic;
+        font-size: 10px;
+        line-height: 19px;
+    }
 
-.tabs-button:hover {
-    background-color: var(--light-active-color);
-}
+    &:hover {
+        background-color: var(--light-active-color);
+    }
 
-.tabs-button-current {
-    background-color: var(--light-active-color);
+    &-current {
+        background-color: var(--light-active-color);
+    }
 }
 
 .subscribe-block {
@@ -78,11 +78,6 @@
     justify-content: space-between;
 }
 
-.subscribe-description-icon {
-    margin: 10px 16px 14px 18px;
-    background-image: url('../src/img/icons/mail-icon.svg');
-}
-
 .subscribe-description {
     max-width: 530px;
     margin-top: 8px;
@@ -90,6 +85,11 @@
     font-style: italic;
     font-size: 14px;
     line-height: 16px;
+
+    &-icon {
+        margin: 10px 16px 14px 18px;
+        background-image: url('../img/icons/mail-icon.svg');
+    }
 }
 
 .input {
@@ -97,12 +97,13 @@
     padding-top: 3px;
     padding-bottom: 6px;
     padding-left: 6px;
+
+    &::placeholder {
+        font-size: 10px;
+        line-height: 10px;
+    }
 }
 
-.input::placeholder {
-    font-size: 10px;
-    line-height: 10px;
-}
 
 .subscribe-button {
     display: inline-block;
@@ -124,50 +125,50 @@
 
 .card {
     flex: 1 1 calc((100% / 4) - 2rem);
-}
 
-.card-image {
-    width: 100%;
-    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
-}
+    &-image {
+        width: 100%;
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
+    }
 
-.card-title {
-    max-width: 95%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    &-title {
+        max-width: 95%;
+        margin-top: 10px;
+        margin-bottom: 10px;
 
-    font-size: 16px;
-    line-height: 21px;
-    letter-spacing: -0.02em;
-}
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: -0.02em;
 
-.card-title .link {
-    color: var(--primary-color);
-}
+        .link {
+            color: var(--primary-color);
+        }
+    }
 
-.card-body {
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
-}
+    &-body {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+    }
 
-.card-info {
-    margin-top: 10px;
-}
+    &-info {
+        margin-top: 10px;
+    }
 
-.card-date {
-    position: relative;
+    &-date {
+        position: relative;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+        color: var(--smokie-color);
 
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
-    color: var(--smokie-color);
-}
+        &::after {
+            position: absolute;
+            content: '/';
+            right: -7px;
+        }
 
-.card-date:after {
-    position: absolute;
-    content: '/';
-    right: -7px;
+    }
 }
 
 .link-more {
@@ -177,11 +178,11 @@
     letter-spacing: -0.02em;
     color: var(--primary-color);
     position: relative;
-}
 
-.link-more:after {
-    position: absolute;
-    content: '...';
+    &::after {
+        position: absolute;
+        content: '...';
+    }
 }
 
 .link-more:hover:after {
@@ -199,10 +200,9 @@
         padding-bottom: 10px;
         text-align: center;
 
-    }
-
-    .tabs-button-subtitle {
-        display: none;
+        &-subtitle {
+            display: none; 
+        }
     }
 
     .subscribe-description {
@@ -270,14 +270,14 @@
 
     .card {
         min-width: 80%;
-    }
 
-    .card-title {
-        font-size: 22px;
-    }
+        &-title {
+            font-size: 22px;
+        }
 
-    .card-body {
-        font-size: 18px;
+        &-body {
+            font-size: 18px; 
+        }
     }
 
     .card-date, .link-more {
@@ -296,5 +296,4 @@
         padding: 0;
         justify-content: flex-end;
     }
-
 }

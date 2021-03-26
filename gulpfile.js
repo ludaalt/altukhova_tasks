@@ -2,38 +2,54 @@
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const browserSync = require('browser-sync').create();
-const autoprefixer = require('gulp-autoprefixer');
 const concatCss = require('gulp-concat-css');
 const del = require('del');
+const autoprefixer = require('gulp-autoprefixer');
+const cssmin = require('gulp-cssmin');
+const rename = require('gulp-rename');
+const browserSync = require('browser-sync').create();
+
 
 gulp.task('clean', function() {
-  return del(['dist/**']);  
+    return del(['./dist/**']);  
 });
 
-gulp.task('styles', function(){
-  return gulp.src('./src/styles/**/*.scss')
-  .pipe(sass.sync())
-  .pipe(gulp.dest('./src/styles/css/'))
-  .pipe(gulp.src('./src/styles/css/**/*.css'))
-  .pipe(concatCss('bundle.css'))
-  .pipe(gulp.dest('dist/'));
+gulp.task('css', function() { 
+return gulp.src('./src/sass/*.scss') 
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./src/css')) 
+    .pipe(gulp.src('./src/css/*.css'))
+      .pipe(concatCss('bundle.css'))
+      .pipe(autoprefixer({
+        overrideBrowserslist:  ['last 2 versions'],
+        cascade: false
+      }))
+      .pipe(cssmin())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(gulp.dest('./dist/style/'))
+      .pipe(browserSync.stream());
 });
 
-gulp.task('autoprefixer', function() {
-  return gulp.src('dist/bundle.css')
-  .pipe(autoprefixer({
-    overrideBrowserslist:  ['last 2 versions'],
-    cascade: false
-  }))  
+gulp.task('copy', function() {
+  return gulp.src('./src/index.html') 
+    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.src('./src/fonts/**'))
+    .pipe(gulp.dest('./dist/fonts/'))
+    .pipe(gulp.src('./src/img/**'))
+    .pipe(gulp.dest('./dist/img/'));
 });
 
-gulp.task('browserSync', function() {
+gulp.task('serve', function() {
   browserSync.init({
-      server: {
-          baseDir: "./src/index.html"
-      }
+    server: {
+      baseDir: './dist'
+    }
   });
+  
+  gulp.watch('./src/sass/**/*.scss', gulp.parallel('css'));
+  gulp.watch('./dist/*.html').on('change', browserSync.reload)
 });
+
+gulp.task('default', gulp.parallel('clean', 'css', 'copy', 'serve'));
 
 
