@@ -33,8 +33,6 @@ return gulp.src('./src/sass/*.scss')
 gulp.task('copy', function() {
   return gulp.src('./src/index.html') 
     .pipe(gulp.dest('./dist/'))
-    .pipe(gulp.src('./src/fonts/**'))
-    .pipe(gulp.dest('./dist/fonts/'))
     .pipe(gulp.src('./src/img/**'))
     .pipe(gulp.dest('./dist/img/'));
 });
